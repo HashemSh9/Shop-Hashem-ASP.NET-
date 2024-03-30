@@ -1,0 +1,308 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="AdminMaster.master.cs" Inherits="Shop_College.Admin.AdminMaster" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <!-- Required meta tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="~/css/shop_lof.ico" type="image/x-icon"/>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital@1&family=Rubik:ital,wght@1,300&display=swap" rel="stylesheet" />
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+<script>
+    $(document).ready(function () {
+        $('#sidebarCollapse').on('click', function () {
+            $('#sidebar').toggleClass('active');
+            $('#content').toggleClass('active');
+        });
+    });
+</script>
+
+
+
+    <link href="Admin_design/css/Style_Admin.css" rel="stylesheet" />
+
+    <style>
+        .back-color {
+    background: linear-gradient(1deg, rgb(229 229 229 / 80%), rgb(255 255 255 / 56%));
+}
+
+
+        #HyperLink15,#HyperLink17 {
+  text-decoration: none;
+  color:#141212;
+  font-weight:600;
+}
+
+#HyperLink15:hover,#HyperLink17:hover {
+  text-decoration: none;  
+}
+
+    </style>
+
+    
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+        
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+      
+        
+        
+        <!-- Vertical navbar -->
+<div class="vertical-nav" id="sidebar" style="overflow: auto;">
+  <div class="py-4 px-3 mb-4 ">
+    <div class="media d-flex align-items-center">
+        <asp:ImageButton ID="ImageButton1" decoding="async" runat="server" ImageUrl="~/Admin/Admin_design/imgs/Prof_admin.jpg" alt="..." width="80" height="120px" class="mr-3 mb-4 rounded-circle img-thumbnail shadow-sm" PostBackUrl="~/Admin/Dashboard.aspx" />
+
+
+      <div class="media-body">
+        <h4 class="m-0">Hashem Sh</h4>
+        <p class="font-weight-normal text-muted mb-0">Web developer</p>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+  
+
+
+    <ul class="nav notpoint">
+    <li class="nav-item ">
+        <span class="icon-bg"><i class="mdi mdi-crosshairs-gps menu-icon"></i></span>
+        <span class="menu-title nav-link"><i class="fa fa-home ml-2"></i>
+            <asp:HyperLink ID="HyperLink15" runat="server" class="" NavigateUrl="~/Admin/Dashboard.aspx">لوحة التحكم</asp:HyperLink></span>
+    </li>
+    
+  </ul>
+    <ul class="nav notpoint">
+    <li class="nav-item ">
+      <a class="nav-link" data-toggle="collapse" href="#ui-bas" aria-expanded="false" aria-controls="ui-basicc">
+        <span class="icon-bg"><i class="mdi mdi-crosshairs-gps menu-icon"></i></span>
+        <span class="menu-title"><i class="fa fa-users ml-2"></i>المستخدمين</span>
+        <i class="menu-arrow"></i>
+      </a>
+      <div class="collapse" id="ui-bas">
+        <ul class="nav flex-column sub-menu">
+          <li class="nav-item"> <asp:HyperLink class="nav-link" ID="HyperLink2" runat="server" NavigateUrl="~/Admin/List/Users.aspx"><i class="fa fa-eye ml-2"></i>عرض</asp:HyperLink></li>
+          <li class="nav-item"> <asp:HyperLink class="nav-link" ID="HyperLink1" runat="server" NavigateUrl="~/Admin/Add/Add_Users.aspx"><i class="fa fa-user-plus ml-2" ></i>إضافة</asp:HyperLink></li>
+        </ul>
+      </div>
+    </li>
+    
+  </ul>
+
+
+    <ul class="nav notpoint">
+    <li class="nav-item ">
+      <a class="nav-link" data-toggle="collapse" href="#ui-CC" aria-expanded="false" aria-controls="ui-basicc">
+        <span class="icon-bg"><i class="mdi mdi-crosshairs-gps menu-icon"></i></span>
+        <span class="menu-title"><i class="fa fa-shopping-bag ml-2"></i>الإعلانات</span>
+        <i class="menu-arrow"></i>
+      </a>
+      <div class="collapse" id="ui-CC">
+        <ul class="nav flex-column sub-menu">
+          <li class="nav-item"> <asp:HyperLink class="nav-link" ID="HyperLink3" runat="server" NavigateUrl="~/Admin/List/Ads.aspx"><i class="fa fa-eye ml-2"></i>عرض</asp:HyperLink></li>
+          <li class="nav-item"> <asp:HyperLink class="nav-link" ID="HyperLink4" runat="server" NavigateUrl="~/Admin/Add/Add_Ads.aspx"><i class="fa fa-user-plus ml-2" ></i>إضافة</asp:HyperLink></li>
+        </ul>
+      </div>
+    </li>
+    
+  </ul>
+
+
+    <ul class="nav notpoint">
+    <li class="nav-item ">
+      <a class="nav-link" data-toggle="collapse" href="#ui-ACC" aria-expanded="false" aria-controls="ui-basicc">
+        <span class="icon-bg"><i class="mdi mdi-crosshairs-gps menu-icon"></i></span>
+        <span class="menu-title"><i class="fa fa-tags ml-2"></i>الفئات</span>
+        <i class="menu-arrow"></i>
+      </a>
+      <div class="collapse" id="ui-ACC">
+        <ul class="nav flex-column sub-menu">
+          <li class="nav-item"> <asp:HyperLink class="nav-link" ID="HyperLink5" runat="server" NavigateUrl="~/Admin/List/Categories.aspx"><i class="fa fa-eye ml-2"></i>عرض</asp:HyperLink></li>
+          <li class="nav-item"> <asp:HyperLink class="nav-link" ID="HyperLink6" runat="server" NavigateUrl="~/Admin/Add/Add_Categories.aspx"><i class="fa fa-user-plus ml-2" ></i>إضافة</asp:HyperLink></li>
+        </ul>
+      </div>
+    </li>
+    
+  </ul>
+
+  <ul class="nav notpoint">
+    <li class="nav-item ">
+      <a class="nav-link" data-toggle="collapse" href="#ui-cACCX" aria-expanded="false" aria-controls="ui-basicc">
+        <span class="icon-bg"><i class="mdi mdi-crosshairs-gps menu-icon"></i></span>
+        <span class="menu-title"><i class="fa fa-tags ml-2"></i>الفئات الفرعية</span>
+        <i class="menu-arrow"></i>
+      </a>
+      <div class="collapse" id="ui-cACCX">
+        <ul class="nav flex-column sub-menu">
+          <li class="nav-item"> <asp:HyperLink class="nav-link" ID="HyperLink7" runat="server" NavigateUrl="~/Admin/List/SubCategories.aspx"><i class="fa fa-eye ml-2"></i>عرض</asp:HyperLink></li>
+          <li class="nav-item"> <asp:HyperLink class="nav-link" ID="HyperLink8" runat="server" NavigateUrl="~/Admin/Add/Add_SubCategories.aspx"><i class="fa fa-user-plus ml-2" ></i>إضافة</asp:HyperLink></li>
+        </ul>
+      </div>
+    </li>
+    
+  </ul>
+
+    <ul class="nav notpoint">
+    <li class="nav-item ">
+      <a class="nav-link" data-toggle="collapse" href="#ui-wACCX" aria-expanded="false" aria-controls="ui-basicc">
+        <span class="icon-bg"><i class="mdi mdi-crosshairs-gps menu-icon"></i></span>
+        <span class="menu-title"><i class="fa fa-picture-o ml-2"></i>الصور</span>
+        <i class="menu-arrow"></i>
+      </a>
+      <div class="collapse" id="ui-wACCX">
+        <ul class="nav flex-column sub-menu">
+          <li class="nav-item"> <asp:HyperLink class="nav-link" ID="HyperLink9" runat="server" NavigateUrl="~/Admin/List/Images.aspx"><i class="fa fa-eye ml-2"></i>عرض</asp:HyperLink></li>
+          <li class="nav-item"> <asp:HyperLink class="nav-link" ID="HyperLink10" runat="server" NavigateUrl="~/Admin/Add/Add_Images.aspx"><i class="fa fa-user-plus ml-2" ></i>إضافة</asp:HyperLink></li>
+        </ul>
+      </div>
+    </li>
+    
+  </ul>
+
+
+       <ul class="nav notpoint">
+    <li class="nav-item ">
+      <a class="nav-link" data-toggle="collapse" href="#ui-wTACCX" aria-expanded="false" aria-controls="ui-basicc">
+        <span class="icon-bg"><i class="mdi mdi-crosshairs-gps menu-icon"></i></span>
+        <span class="menu-title"><i class="fa fa-commenting ml-2" ></i>التعليقات</span>
+        <i class="menu-arrow"></i>
+      </a>
+      <div class="collapse" id="ui-wTACCX">
+        <ul class="nav flex-column sub-menu">
+          <li class="nav-item"> <asp:HyperLink class="nav-link" ID="HyperLink11" runat="server" NavigateUrl="~/Admin/List/Comments.aspx"><i class="fa fa-eye ml-2"></i>عرض</asp:HyperLink></li>
+          <li class="nav-item"> <asp:HyperLink class="nav-link" ID="HyperLink12" runat="server" NavigateUrl="~/Admin/Add/Add_Comments.aspx"><i class="fa fa-user-plus ml-2" ></i>إضافة</asp:HyperLink></li>
+        </ul>
+      </div>
+    </li>
+    
+  </ul>
+
+       <ul class="nav notpoint">
+    <li class="nav-item ">
+      <a class="nav-link" data-toggle="collapse" href="#ui-wFTACCX" aria-expanded="false" aria-controls="ui-basicc">
+        <span class="icon-bg"><i class="mdi mdi-crosshairs-gps menu-icon"></i></span>
+        <span class="menu-title"><i class="fa fa-question-circle ml-2" ></i>الأسئلة الشائعة</span>
+        <i class="menu-arrow"></i>
+      </a>
+      <div class="collapse" id="ui-wFTACCX">
+        <ul class="nav flex-column sub-menu">
+          <li class="nav-item"> <asp:HyperLink class="nav-link" ID="HyperLink13" runat="server" NavigateUrl="~/Admin/List/FAQ.aspx"><i class="fa fa-eye ml-2"></i>عرض</asp:HyperLink></li>
+          <li class="nav-item"> <asp:HyperLink class="nav-link" ID="HyperLink14" runat="server" NavigateUrl="~/Admin/Add/Add_FAQ.aspx"><i class="fa fa-user-plus ml-2" ></i>إضافة</asp:HyperLink></li>
+        </ul>
+      </div>
+    </li>
+    
+  </ul>
+
+    <ul class="nav notpoint">
+    <li class="nav-item ">
+        <span class="icon-bg"><i class="mdi mdi-crosshairs-gps menu-icon"></i></span>
+        <span class="menu-title nav-link"><i class="fa fa-sign-out ml-2"></i>
+            <asp:LinkButton ID="LnkOut" runat="server" OnClick="LnkOut_Click">تسجيل خروج</asp:LinkButton></span>
+    </li>
+    
+  </ul>
+
+
+</div>
+<!-- End vertical navbar -->
+
+
+<!-- Page content holder -->
+<div class="page-content p-5" id="content">
+
+
+    
+   
+
+    <div class="logo-img" style="width: 270px;">
+    <%--<img alt="logo" src="../Admin_design/imgs/logo_admin.png" class="img-fluid" style="width:100%;height:100%;"/>--%>
+        <asp:ImageButton ID="ImageButton2" runat="server" alt="logo" class="img-fluid" style="width:100%;height:100%;" ImageUrl="~/Photos/shop_lof.jpg"  OnClientClick="return false;" />
+    </div>
+
+  <!-- Toggle button -->
+  <button id="sidebarCollapse" type="button" class="btn btn-light bg-white rounded-pill shadow-sm px-2 mb-2"><small class="text-uppercase font-weight-bold"></small><i class="fa fa-bars mr-1"></i></button>
+
+  <!-- Demo content -->
+     
+    <div  class="row col-6 back-color">
+        <div class="col-12">
+  <h2 class="text-gray"><i class="fa fa-question-circle"></i>مساعدة؟</h2>
+        </div>
+        <div class="col-12">
+       <p class="ps-0 h6 ps-sm-2 text-muted d-inline-block"> بإمكانك الذهاب إلى أي قسم عبر القائمة الجانبية.</p>
+           </div>
+          
+           
+    </div>
+
+  
+  <div class="separator"></div>
+  
+
+
+
+
+
+
+
+
+
+ 
+<!-- End demo content -->
+
+
+
+
+            
+             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+
+                     
+                        <!-- هنا نكتب الصفحة المطلوبة -->
+
+
+                    </asp:ContentPlaceHolder>
+
+                
+         
+     </div>
+
+       
+       <%--  <script src="../../javaAlert/sweetalert2@11.js"></script>
+    <script src="../../javaAlert/sweet-alert.min.js"></script>
+    <script src="../../js/popper.min.js"></script>
+    <script src="../../js/jquery-3.7.1.min.js"></script>
+    <script src="../../js/bootstrap.js"></script>
+  
+   --%>
+     
+
+
+
+
+        
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+   <script src="../Admin_design/js/main.js"></script>
+  </form>
+</body>
+</html>
